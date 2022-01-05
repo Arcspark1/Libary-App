@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body {
+    height: 100vh;
+    padding: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20rem;
+}
+
+.addBook{
+    font-size: 10rem;
+    padding: 2rem;
+    border-radius: 3rem;
+    border-style: none;
+}
+
+#books {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+.book{
+    background-color: bisque;
+    border-radius: 3rem;
+    padding: 5rem;
+    width: fit-content;
+}
+.book > p{
+    font-size: 5rem;
+    max-width: 10ch;
+}
