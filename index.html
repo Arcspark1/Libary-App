@@ -14,5 +14,32 @@
         
     </Section>
     
+    <form action="" class="addBookForm">
+        <div>
+            <label for="name">Book Name: </label>
+            <input type="text" name="bookName" id="bookName" required>
+        </div>
+        <div>
+            <label for="author">Book Author: </label>
+            <input type="text" name="bookAuthor" id="bookAuthor" required>
+        </div>
+        <div>
+            <label for="pages">Number of pages: </label>
+            <input type="number" name="bookPages" id="bookPages" required>
+        </div>
+        <div>
+            <label for="haveRead">Finished Reading</label>
+            <input type="checkbox" name="haveRead" id="haveRead" value="true">
+        </div>
+        <div>
+            <label for="haventRead">Still to read</label>
+            <input type="checkbox" name="haventRead" id="haventRead" value="false">
+        </div>
+        <div>
+            <button class="completeForm">Add Book</button>
+        </div>
+    </form>
+    
+    
 </body>
 </html>

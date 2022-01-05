@@ -40,3 +40,20 @@ body {
     font-size: 5rem;
     max-width: 10ch;
 }
+
+.addBookForm{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: fit-content;
+    gap: 1rem;
+}
+
+.addBookForm > div{
+    display: flex;
+    gap: 0.5rem;
+}
+
+.addBookForm > div > *{
+    font-size: 5rem;
+}

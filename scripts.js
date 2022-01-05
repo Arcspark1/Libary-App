@@ -1,8 +1,9 @@
 let myLibary = [];
 const sectionBooks = document.querySelector('#books');
+const addBookButton = document.querySelector('.addBook');
 
 let testBook = new Book('marc','me', 500)
-
+// Book object
 function Book(name, author, pages, read = false){
     this.name = name;
     this.author = author;
@@ -13,7 +14,9 @@ function Book(name, author, pages, read = false){
 Book.prototype.info = function(){
     return `${this.name}, ${this.author}, ${this.pages}, ${this.read}`;
 }
-//Function to add book to Libary;
+
+
+//Function to add book to Libary Array;
 function addBookToLibary(){
     let name = prompt('Name of book:');
     let author = prompt ('Author of book: ');
@@ -21,12 +24,26 @@ function addBookToLibary(){
     let book = new Book(name, author, pages);
     myLibary.push(book);
 }
+// testing
 myLibary.push(testBook);
-addBookToLibary();
-console.table(myLibary);
-console.log(myLibary[0].name);
-console.log(myLibary[0].info());
+generateForm()
 
+// function generateForm(){
+//     const bookForm = document.createElement('form');
+//     bookForm.classList.add('bookForm');
+//     bookForm.action = "";
+//     const nameLabel = document.createElement('label');
+//     nameLabel.htmlFor="bname";
+//     nameLabel.textContent="Name of the book:";
+//     const nameInput = document.createElement('input');
+//     nameInput.type="text";
+//     nameInput.id="bname";
+//     bookForm.appendChild(nameLabel);
+//     bookForm.appendChild(nameInput);
+//     document.querySelector('body').appendChild(bookForm);
+// }
+
+// For loop that creates all the book cards based on myLibary
 for(let i = 0; i < myLibary.length; i++) {
     const newBook = document.createElement('div');
     const bookName = document.createElement('p');
@@ -41,3 +58,4 @@ for(let i = 0; i < myLibary.length; i++) {
     newBook.classList.add('book')
     document.querySelector('#books').appendChild(newBook);
 }
+
