@@ -1,6 +1,8 @@
 let myLibary = [];
 const sectionBooks = document.querySelector('#books');
 const addBookButton = document.querySelector('.addBook');
+const addBookForm = document.querySelector('.addBookForm');
+
 
 let testBook = new Book('marc','me', 500)
 // Book object
@@ -15,6 +17,12 @@ Book.prototype.info = function(){
     return `${this.name}, ${this.author}, ${this.pages}, ${this.read}`;
 }
 
+// Add Book Button
+addBookButton.addEventListener('click', () =>{
+    addBookForm.classList.remove('hidden');
+    addBookButton.disabled = true;
+})
+
 
 //Function to add book to Libary Array;
 function addBookToLibary(){
@@ -27,21 +35,6 @@ function addBookToLibary(){
 // testing
 myLibary.push(testBook);
 
-
-// function generateForm(){
-//     const bookForm = document.createElement('form');
-//     bookForm.classList.add('bookForm');
-//     bookForm.action = "";
-//     const nameLabel = document.createElement('label');
-//     nameLabel.htmlFor="bname";
-//     nameLabel.textContent="Name of the book:";
-//     const nameInput = document.createElement('input');
-//     nameInput.type="text";
-//     nameInput.id="bname";
-//     bookForm.appendChild(nameLabel);
-//     bookForm.appendChild(nameInput);
-//     document.querySelector('body').appendChild(bookForm);
-// }
 
 // For loop that creates all the book cards based on myLibary
 for(let i = 0; i < myLibary.length; i++) {

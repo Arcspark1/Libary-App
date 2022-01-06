@@ -41,6 +41,7 @@ body {
     max-width: 10ch;
 }
 
+/* Book Form Section */
 .addBookForm{
     display: flex;
     flex-direction: column;
@@ -50,6 +51,9 @@ body {
     background-color: cadetblue;
     border-radius: 2rem;
     padding: 2rem;
+    position: fixed;
+    bottom: auto;
+    top: auto;
 }
 
 .addBookForm > div{
@@ -74,4 +78,8 @@ input[type='checkbox'] {
 }
 .addBookForm > div > *{
     font-size: 3rem;
+}
+
+.hidden {
+    display: none;
 }
