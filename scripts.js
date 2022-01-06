@@ -4,8 +4,6 @@ const addBookButton = document.querySelector('.addBook');
 const addBookForm = document.querySelector('.addBookForm');
 const submitFormBtn = document.querySelector('.completeForm');
 
-
-let testBook = new Book('Harry potter and the chamber of secrets','me', 500)
 // Book object
 function Book(name, author, pages, read = false){
     this.name = name;
