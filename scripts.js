@@ -2,9 +2,10 @@ let myLibary = [];
 const sectionBooks = document.querySelector('#books');
 const addBookButton = document.querySelector('.addBook');
 const addBookForm = document.querySelector('.addBookForm');
+const submitFormBtn = document.querySelector('.completeForm');
 
 
-let testBook = new Book('marc','me', 500)
+let testBook = new Book('Harry potter and the chamber of secrets','me', 500)
 // Book object
 function Book(name, author, pages, read = false){
     this.name = name;
@@ -17,38 +18,58 @@ Book.prototype.info = function(){
     return `${this.name}, ${this.author}, ${this.pages}, ${this.read}`;
 }
 
-// Add Book Button
+// Add Book Button functionality
 addBookButton.addEventListener('click', () =>{
     addBookForm.classList.remove('hidden');
     addBookButton.disabled = true;
 })
 
+//Form Data
+submitFormBtn.addEventListener('click', () =>{
+    let bookFormData = new FormData(addBookForm);
+    addBookToLibary(
+        bookFormData.get('bookName'),
+        bookFormData.get('bookAuthor'),
+        bookFormData.get('bookPages'),
+        bookFormData.get('haveRead')
+    )
+    addBookForm.classList.add('hidden');
+    addBookButton.disabled = false;
+    updateLibary();
+    document.getElementById("addBookFormId").reset();
+})
+
+
+
+
 
 //Function to add book to Libary Array;
-function addBookToLibary(){
-    let name = prompt('Name of book:');
-    let author = prompt ('Author of book: ');
-    let pages = prompt('How many pages?: ');
-    let book = new Book(name, author, pages);
+function addBookToLibary(name, author, pages, read){
+    let book = new Book(name, author, pages, read);
     myLibary.push(book);
 }
 // testing
 myLibary.push(testBook);
+updateLibary();
 
 
 // For loop that creates all the book cards based on myLibary
-for(let i = 0; i < myLibary.length; i++) {
-    const newBook = document.createElement('div');
-    const bookName = document.createElement('p');
-    const bookAuthor = document.createElement('p');
-    const bookPages = document.createElement('p');
-    bookName.textContent = `${myLibary[i].name}`
-    bookAuthor.textContent = `${myLibary[i].author}`
-    bookPages.textContent = `${myLibary[i].pages}`
-    newBook.appendChild(bookName);
-    newBook.appendChild(bookAuthor);
-    newBook.appendChild(bookPages);
-    newBook.classList.add('book')
-    document.querySelector('#books').appendChild(newBook);
+function updateLibary() {
+    for (let i = myLibary.length; i <= myLibary.length; i++) {
+        const newBook = document.createElement('div');
+        const bookName = document.createElement('p');
+        const bookAuthor = document.createElement('p');
+        const bookPages = document.createElement('p');
+        const bookRead = document.createElement('p');
+        bookName.textContent = `Title: ${myLibary[i-1].name}`;
+        bookAuthor.textContent = `Author: ${myLibary[i-1].author}`;
+        bookPages.textContent = `Pages: ${myLibary[i-1].pages}`;
+        bookRead.textContent = `Read: ${myLibary[i-1].read}`;
+        newBook.appendChild(bookName);
+        newBook.appendChild(bookAuthor);
+        newBook.appendChild(bookPages);
+        newBook.appendChild(bookRead);
+        newBook.classList.add('book')
+        document.querySelector('#books').appendChild(newBook);
+    }
 }
-

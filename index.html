@@ -14,7 +14,7 @@
         
     </Section>
     
-    <form action="" class="addBookForm hidden">
+    <form id="addBookFormId" action="" class="addBookForm hidden" onsubmit="return false">
         <div>
             <label for="name">Book Name: </label>
             <input type="text" name="bookName" id="bookName" required>
@@ -30,11 +30,11 @@
         <div class="readSelection">
             <div>
                 <label for="haveRead">Finished Reading</label>
-                <input type="checkbox" name="haveRead" id="haveRead" value="true">
+                <input type="radio" name="haveRead" id="haveRead" value="true">
             </div>
             <div>
                 <label for="haventRead">Still to read</label>
-                <input type="checkbox" name="haventRead" id="haventRead" value="false">
+                <input type="radio" name="haveRead" id="haventRead" value="false">
             </div>
         </div>
         <div>
