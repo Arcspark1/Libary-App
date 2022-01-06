@@ -43,10 +43,13 @@ body {
 
 .addBookForm{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
     max-width: fit-content;
     gap: 1rem;
+    background-color: cadetblue;
+    border-radius: 2rem;
+    padding: 2rem;
 }
 
 .addBookForm > div{
@@ -54,6 +57,21 @@ body {
     gap: 0.5rem;
 }
 
+.readSelection{
+    display: flex;
+    padding: 1rem;
+}
+.readSelection > *{
+    flex-grow: 1;
+}
+input[type='checkbox'] {
+    width: 4rem;
+    height: 4rem;
+}
+
+.addBookForm > div > input{
+    flex-grow: 1;
+}
 .addBookForm > div > *{
-    font-size: 5rem;
+    font-size: 3rem;
 }
